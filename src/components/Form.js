@@ -23,6 +23,7 @@ const Form = () => {
             <textarea id="note-content" className="materialize-textarea" { ...bindContent } ></textarea>
             <label for="note-content">Note Content</label>
           </div>
+          <button className="btn green">Add</button>
       </form>
     </div>
   )
