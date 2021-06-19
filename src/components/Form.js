@@ -4,9 +4,14 @@ const Form = () => {
   const [title, bindTitle, resetTitle] = useInput();
   const [content, bindContent, resetContent] = useInput();
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log({ title, content })
+  }
+
   return (
     <div className="section">
-      <form>
+      <form  onSubmit={ handleSubmit }>
         <h5 className="grey-text">New note </h5>
           <div className="input-field">
             <input value="Alvin" id="first_name2" type="text" className="validate" />
