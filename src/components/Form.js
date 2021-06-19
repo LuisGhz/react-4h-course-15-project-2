@@ -13,7 +13,7 @@ const Form = () => {
 
   return (
     <div className="section">
-      <form  onSubmit={ handleSubmit }>
+      <form  onSubmit={ handleSubmit } className="white" >
         <h5 className="grey-text">New note </h5>
           <div className="input-field">
             <input value="Alvin" id="first_name2" type="text" className="validate" { ...bindTitle } />
