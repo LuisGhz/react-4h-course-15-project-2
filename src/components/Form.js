@@ -6,7 +6,9 @@ const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log({ title, content })
+    console.log({ title, content });
+    resetTitle()
+    resetContent()
   }
 
   return (
@@ -14,11 +16,11 @@ const Form = () => {
       <form  onSubmit={ handleSubmit }>
         <h5 className="grey-text">New note </h5>
           <div className="input-field">
-            <input value="Alvin" id="first_name2" type="text" className="validate" />
+            <input value="Alvin" id="first_name2" type="text" className="validate" { ...bindTitle } />
             <label className="active" for="first_name2">Note Title</label>
           </div>
           <div className="input-field">
-            <textarea id="note-content" className="materialize-textarea" ></textarea>
+            <textarea id="note-content" className="materialize-textarea" { ...bindContent } ></textarea>
             <label for="note-content">Note Content</label>
           </div>
       </form>
