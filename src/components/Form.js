@@ -14,14 +14,14 @@ const Form = () => {
   return (
     <div className="section">
       <form  onSubmit={ handleSubmit } className="white" >
-        <h5 className="grey-text">New note </h5>
+        <h5 className="grey-text text-darken-3">New note </h5>
           <div className="input-field">
-            <input value="Alvin" id="first_name2" type="text" className="validate" { ...bindTitle } />
-            <label className="active" for="first_name2">Note Title</label>
+            <input value="Alvin" id="note-title" type="text" className="validate" { ...bindTitle } />
+            <label className="active" htmlFor="note-title">Note Title</label>
           </div>
           <div className="input-field">
             <textarea id="note-content" className="materialize-textarea" { ...bindContent } ></textarea>
-            <label for="note-content">Note Content</label>
+            <label htmlFor="note-content">Note Content</label>
           </div>
           <button className="btn green">Add</button>
       </form>
