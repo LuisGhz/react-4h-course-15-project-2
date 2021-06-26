@@ -27,9 +27,13 @@ const rrfProps = {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={ store }>
+    <ReactReduxFirebaseProvider {...rrfProps} >
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ReactReduxFirebaseProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
