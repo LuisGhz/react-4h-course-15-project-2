@@ -5,11 +5,26 @@ import firebase from 'firebase/app';
 import thunk from 'redux-thunk';
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { createFirestoreInstance, getFirestore } from 'redux-firestore';
+import { createFirestoreInstance, getFirestore, reduxFirestore } from 'redux-firestore';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from 'store/reducers/rootReducer';
+import fbconfig from 'config/firebase';
+
+const store = createStore(rootReducer, compose(
+  applyMiddleware(thunk.withExtraArgument({
+    getFirebase, getFirestore
+  })),
+  reduxFirestore(fbconfig)
+));
+
+const rrfProps = {
+  firebase,
+  config: fbconfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance
+}
 
 ReactDOM.render(
   <React.StrictMode>
