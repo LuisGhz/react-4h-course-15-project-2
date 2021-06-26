@@ -13,11 +13,11 @@ import rootReducer from 'store/reducers/rootReducer';
 import fbconfig from 'config/firebase';
 
 const store = createStore(rootReducer, compose(
-  applyMiddleware(thunk.withExtraArgument({
-    getFirebase, getFirestore
-  }))),
-  reduxFirestore(fbconfig)
-);
+    applyMiddleware(thunk.withExtraArgument({
+      getFirebase, getFirestore
+    })),
+    reduxFirestore(fbconfig)
+  ));
 
 const rrfProps = {
   firebase,
