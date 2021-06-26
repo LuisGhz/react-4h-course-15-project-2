@@ -9,12 +9,13 @@ const Note = ({ note }) => {
   const toggleFavoriteHandler = note => {
     dispatch(toggleFavoriteNote(note))
   }
+  const favoriteMarkup = note.favorite ? 'favorite' : 'favorite_border';
 
   return (
     <div className="note white" >
       <div className="right-align">
         <i className="material-icons red-text" style={{ cursor: 'pointer' }} 
-          onClick={ () => toggleFavoriteHandler(note) } >favorite</i>
+          onClick={ () => toggleFavoriteHandler(note) } >{ favoriteMarkup }</i>
         <i className="material-icons" style={{ cursor: 'pointer' }} 
           onClick={ () => deleteNoteHandler(note) } >delete</i>
       </div>
