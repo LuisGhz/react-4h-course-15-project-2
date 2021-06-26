@@ -1,6 +1,11 @@
+import { useSelector } from 'react-redux';
+import { useFirestoreConnect } from 'react-redux-firebase';
 import Form from 'components/Form';
 
 const Home = () => {
+  useFirestoreConnect([{ collection: 'notes', orderBy: [ 'createdAt', 'desc' ] }])
+  const notes = useSelector(state => state.firestore.ordered.notes);
+  console.log(notes)
   return (
     <div className="container" >
       <div className="row center-align">
