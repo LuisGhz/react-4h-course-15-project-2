@@ -2,7 +2,10 @@
 const Note = ({ note }) => {
   return (
     <div className="note white" >
-      { note.title }
+      <div className="right-align">
+        <i className="material-icons red-text" style={{ cursor: 'pointer' }} >favorite</i>
+        <i className="material-icons" style={{ cursor: 'pointer' }} >delete</i>
+      </div>
     </div>
   )
 }
