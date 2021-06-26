@@ -1,7 +1,10 @@
+import Note from "./Note";
 
-const NotesList = () => {
+const NotesList = ({ notes }) => {
   return (
-    <div></div>
+    <div className="notes-list">
+      { notes && notes.map(note => <Note key={ note.id } note={ note } />) }
+    </div>
   )
 }
 
