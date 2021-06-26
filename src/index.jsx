@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import firebase from 'firebase/app';
+import thunk from 'redux-thunk';
+import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { createFirestoreInstance, getFirestore } from 'redux-firestore';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import rootReducer from 'store/reducers/rootReducer';
 
 ReactDOM.render(
   <React.StrictMode>
