@@ -1,7 +1,9 @@
 
-const Note = () => {
+const Note = ({ note }) => {
   return (
-    <div></div>
+    <div className="note white" >
+      { note.title }
+    </div>
   )
 }
 
