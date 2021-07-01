@@ -1,10 +1,9 @@
 
 const EditForm = () => {
   return (
-    <div>
-      EditForm
-    </div>
-  );
+  <div>
+    EditForm
+  </div>);
 }
 
 export default EditForm;
