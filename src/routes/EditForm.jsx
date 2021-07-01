@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
+import {useHistory  } from 'react-router-dom'
 import { editNote } from 'store/actions/noteAction';
 import useInput from 'customHook/useInput';
 
 const EditForm = () => {
   const note = useSelector(state => state.note);
+  const history = useHistory();
   const dispatch = useDispatch();
   const [title, bindTitle, resetTitle] = useInput(note.title);
   const [content, bindContent, resetContent] = useInput(note.content);
@@ -13,6 +15,7 @@ const EditForm = () => {
     dispatch(editNote({ id: note.id, title, content }));
     resetTitle();
     resetContent();
+    history.push('/');
   }
 
   return (
