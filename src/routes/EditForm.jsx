@@ -28,7 +28,7 @@ const EditForm = () => {
           </div>
           <div className="input-field">
             <textarea id="note-content" className="materialize-textarea" { ...bindContent } ></textarea>
-            <label htmlFor="note-content">Note Content</label>
+            <label className="active" htmlFor="note-content">Note Content</label>
           </div>
           <button className="btn green">Edit note</button>
       </form>
