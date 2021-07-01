@@ -11,6 +11,11 @@ const Note = ({ note }) => {
   const toggleFavoriteHandler = note => {
     dispatch(toggleFavoriteNote(note))
   }
+  const editNoteHandler = () => {
+    console.log(note)
+    dispatch({ type: 'EDIT_NOTE', payload: note })
+  }
+
   const favoriteMarkup = note.favorite ? 'favorite' : 'favorite_border';
 
   return (
@@ -27,8 +32,8 @@ const Note = ({ note }) => {
       <p className="truncate">{ note.content }</p>
       <p className="grey-text">{ moment(note.createdAt.toDate()).fromNow() }</p>
       <div className="right-align">
-        <Link to={ `/edit-note/${ note.id }` } >
-          <i className="material-icons black-text" style={{ cursor: 'pointer' }}>edit</i>
+        <Link to={ `/edit-note/${ note.id }` } onClick={ editNoteHandler } >
+          <i className="material-icons black-text" style={{ cursor: 'pointer' }} >edit</i>
         </Link>
       </div>
     </div>
