@@ -38,3 +38,17 @@ export const toggleFavoriteNote = note => {
     .catch(err => console.error(`Something was wrong: ${ err }`))
   }
 }
+
+export const editNote = note => {
+  return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore()
+    firestore.collection('notes').doc(note.id).update({
+      title: note.title,
+      content: note.content
+    })
+    .then(() => {
+      console.log('Note updated successfully');
+    })
+    .catch(err => console.error(`Something was wrong: ${ err }`))
+  }
+}
